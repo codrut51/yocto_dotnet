@@ -5,7 +5,7 @@ AUTOMAKE_OPTIONS = foreign
 all: download_dotnet install_dotnet
 
 URL="https://download.visualstudio.microsoft.com/download/pr/7c130118-be9f-4e5b-89c3-97ffcfa2f45e/e156161f472b57159868c7b6225679f8/aspnetcore-runtime-2.2.4-linux-arm.tar.gz"
-WORKDIR=/usr/share
+WORKDIR=${DIR}
 BINDIR=/usr/bin
 PACKAGE=aspnetcore-runtime-2.2.4-linux-arm.tar.gz
 
