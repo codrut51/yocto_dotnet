@@ -1,3 +1,5 @@
+AUTOMAKE_OPTIONS = foreign
+
 .PHONY: all download_dotnet install_dotnet clean
 
 all: download_dotnet install_dotnet
