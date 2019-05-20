@@ -11,7 +11,7 @@ PACKAGE=aspnetcore-runtime-2.2.4-linux-arm.tar.gz
 
 download_dotnet: 
 	wget ${URL}
-	mv ${PACKAGE} ${WORKDIR}/workdir
+	mv ${PACKAGE} ${WORKDIR}/workdir/
 
 
 install_dotnet:
