@@ -7,7 +7,7 @@ all: download_dotnet install_dotnet
 URL="https://download.visualstudio.microsoft.com/download/pr/7c130118-be9f-4e5b-89c3-97ffcfa2f45e/e156161f472b57159868c7b6225679f8/aspnetcore-runtime-2.2.4-linux-arm.tar.gz"
 WORKDIR=/usr/share
 BINDIR=/usr/bin
-PACKAGE="aspnetcore-runtime-2.2.4-linux-arm.tar.gz"
+PACKAGE=aspnetcore-runtime-2.2.4-linux-arm.tar.gz
 
 download_dotnet: 
 	wget ${URL}
@@ -24,6 +24,7 @@ install_dotnet:
 	cp -r ${WORKDIR}/workdir/dotnet/fxr ${WORKDIR}/dotnet
 	cp -r ${WORKDIR}/workdir/dotnet/shared ${WORKDIR}/dotnet
 	
+	ln -s ${D}${datadir}/dotnet/dotnet ${D}${bindir}/dotnet
 
 clean:
 	sudo rm -r ${WORKDIR}/dotnet
