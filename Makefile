@@ -5,17 +5,19 @@ AUTOMAKE_OPTIONS = foreign
 all: download_dotnet install_dotnet
 
 URL="https://download.visualstudio.microsoft.com/download/pr/7c130118-be9f-4e5b-89c3-97ffcfa2f45e/e156161f472b57159868c7b6225679f8/aspnetcore-runtime-2.2.4-linux-arm.tar.gz"
-ROOTFS=/rootfs
+WORKDIR=/usr/share/dotnet
 PACKAGE="aspnetcore-runtime-2.2.4-linux-arm.tar.gz"
 
 download_dotnet: 
+	mkdir -p ${WORKDIR}
 	wget ${URL}
-	sudo mv ${PACKAGE} ${ROOTFS}
+	mv ${PACKAGE} ${WORKDIR}
 
 install_dotnet:
-	sudo mkdir ${ROOTFS}/dotnet
-	sudo tar -xzf ${ROOTFS}/${PACKAGE} -C ${ROOTFS}/dotnet
-	sudo rm -r ${ROOTFS}/${PACKAGE}
+	mkdir ${WORKDIR}/dotnet
+	tar -xzf ${WORKDIR}/${PACKAGE} -C ${WORKDIR}/dotnet
+	rm -r ${WORKDIR}/${PACKAGE}
+
 
 clean:
-	sudo rm -r ${ROOTFS}/dotnet
+	sudo rm -r ${WORKDIR}/dotnet
