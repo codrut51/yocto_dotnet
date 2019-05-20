@@ -25,7 +25,7 @@ install_dotnet:
 	cp -r ${WORKDIR}/workdir/dotnet/shared ${WORKDIR}/dotnet
 	
 	# Symlinks
-    ln -s ${WORKDIR}/dotnet/dotnet ${BINDIR}/dotnet
+    ln -s ${WORKDIR}/dotnet/dotnet  ${BINDIR}/dotnet
 
 clean:
 	sudo rm -r ${WORKDIR}/dotnet
