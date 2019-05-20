@@ -14,7 +14,8 @@ download_dotnet:
 
 install_dotnet:
 	mkdir ${ROOTFS}/dotnet
-	tar -xzf ${ROOTFS}/aspnetcore-runtime-2.2.4-linux-arm.tar.gz -C ${ROOTFS}/dotnet
+	tar -xzf ${ROOTFS}/${PACKAGE} -C ${ROOTFS}/dotnet
+	rm -r ${ROOTFS}/${PACKAGE}
 
 clean:
 	rm -r ${ROOTFS}/*
