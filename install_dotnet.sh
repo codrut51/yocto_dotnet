@@ -1,1 +1,1 @@
-cd opt/scripts/; make
+cd /home/root/; make

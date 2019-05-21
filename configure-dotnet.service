@@ -3,7 +3,7 @@ Description=Configure bluetooth
 
 [Service]
 Type=oneshot
-ExecStart=/opt/scripts/install_dotnet.sh
+ExecStart=/home/root/install_dotnet.sh
 
 [Install]
 WantedBy=multi-user.target
