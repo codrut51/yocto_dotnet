@@ -4,8 +4,8 @@ AUTOMAKE_OPTIONS = foreign
 
 all: download_dotnet install_dotnet
 
-WORKDIR=/usr/shared
-DOWNLOAD=/usr/shared/download
+WORKDIR=/usr/share
+DOWNLOAD=/usr/share/download
 BINDIR=/usr/bin
 PACKAGE=aspnetcore-runtime-2.2.4-linux-arm.tar.gz
 
