@@ -1,0 +1,10 @@
+[Unit]
+Description=Configure Dotnet
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c 'sleep 5 ; /usr/sbin/install_dotnet.sh'
+
+[Install]
+WantedBy=multi-user.target
