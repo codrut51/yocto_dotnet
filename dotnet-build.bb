@@ -21,9 +21,7 @@ do_install() {
     install -d ${D}${sbindir}/   
     install -d ${D}${systemd_unitdir}/system/
     install -m 0644 ${S}/aspnetcore-runtime-2.2.4-linux-arm.tar.gz ${D}${datadir}/download/
-    install -m 0755 ${S}/configure-dotnet.service ${D}${systemd_unitdir}/system/
-    install -m 0644 ${S}/Makefile ${D}${sbindir}/
-    install -m 0755 ${S}/install_dotnet.sh ${D}${sbindir}/
+    
 }
 
 
@@ -36,7 +34,3 @@ FILES_${PN} = "\
     ${sbindir}/ \
     ${sbindir}/* \
 "
-
-NATIVE_SYSTEMD_SUPPORT = "1"
-SYSTEMD_PACKAGES = "${PN}"
-SYSTEMD_SERVICE_${PN} = "configure-dotnet.service"
